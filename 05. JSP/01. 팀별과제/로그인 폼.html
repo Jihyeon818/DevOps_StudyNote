@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;  
+    }
+    .di{
+      width: 350px;
+      border-radius: 5px;
+      box-shadow: 0 0 30px gainsboro;
+      padding: 30px;
+    }
+    .di .di2{
+      position: relative; 
+      margin: 20px 0;
+    }
+    .di .s1{
+      position: absolute;
+      left:0;
+      top:10px;
+      transition: 0.3s;
+      color:gray;
+      pointer-events: none;
+    }
+    .di input{
+      border: none;
+      border-bottom: 1px solid gainsboro;
+      outline: none;
+      width: 100%;
+      padding: 10px 0;
+      font-size:15px;
+    }
+    button{
+      background-color: violet;
+      color:white;
+      width:100%;
+      padding: 10px 30px;
+      border: none;
+      cursor: pointer;
+
+    }
+    .s1.active{
+      top:-10px;
+      color:yellowgreen;
+    }
+
+
+  </style>
+</head>
+<body>
+  <form>
+    <div class="di">
+      <div class="di2">
+          <span class="s1">Email</span>
+          <input type="email">
+      </div>
+      <div class="di2">
+        <span class="s1">Password</span>
+        <input type="password">
+      </div>
+      <div class="di2">
+        <span class="s1">Password Confirm</span>
+        <input type="password">
+      </div>
+      <button>Login</button>
+    </div>
+  </form>
+  <script>
+    let $n=$('.di input');
+    $n.focus(function(){
+      $(this).parent().find('.s1').addClass('active');
+    });
+
+    $n.focusout(function(){
+      if($(this).val()==''){
+        $(this).parent().find('.s1').removeClass('active');
+      }
+    });
+  </script>
+  
+</body>
+</html>

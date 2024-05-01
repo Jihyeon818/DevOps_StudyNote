@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프론트 시험4</title>
+</head>
+<body>
+    식: <input type="text" id="cal">
+    값: <input type="text" id="result">
+    <button onclick="calcu()">계산</button>
+    <script>
+        function calcu(){
+            let num = eval(document.getElementById("cal").value);
+            document.getElementById("result").value = num;
+        }
+    </script>
+</body>
+</html>

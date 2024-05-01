@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프론트 시험3</title>
+</head>
+<body>
+    <h1>설문지</h1>
+    <p>사고 싶은 핸드폰 종류</p>
+    <hr>
+        <span>갖고있는 폰 종류</span>
+        <input type="radio" name="phone" id="ipone" value="아이폰">
+        <label for="ipone">아이폰</label>
+        <input type="radio" name="phone" id="sam" value="삼성">
+        <label for="sam">삼성</label>
+        <input type="radio" name="phone" id="lg" value="LG">
+        <label for="lg">LG</label>
+        <input type="radio" name="phone" id="ath" value="그 외">
+        <label for="ath">그 외</label>
+        <br>
+        <span>성별</span>
+        <input type="radio" name="gender" id="m" value="남자">
+        <label for="m">남자</label>
+        <input type="radio" name="gender" id="w" value="여자">
+        <label for="w">여자</label>
+        <br>
+        <span>구매 시기</span>
+        <select id="time">
+            <option value="2017~2020" selected>2017~2020</option>
+            <option value="~2013~2016">~2013~2016</option>
+        </select>
+        <br>
+        <span>통신사</span>
+        <input type="checkbox" id="skt" name="tel" value="SKT">
+        <label for="skt">SKT</label>
+        <input type="checkbox" id="KT" name="tel" value="KT">
+        <label for="kt">KT</label>
+        <input type="checkbox" id="lgtel" name="tel" value="LG">
+        <label for="lgtel">LG</label>
+        <input type="checkbox" id="athor" name="tel" value="그 외">
+        <label for="athor">그 외</label>
+        <br>
+        <span>남기고 싶은 말</span>
+        <textarea></textarea>
+        <br>
+        <button onclick="result()">클릭</button>
+        <button onclick="color()">색변경</button>
+        <p id="text"></p>
+    <script>
+        let survey = document.getElementById("survey");
+        let text = document.getElementById("text");
+
+        function result(){
+            let phone = document.querySelector('input[name="phone"]:checked').value;
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+            let time = document.getElementById("time").options[document.getElementById("time").selectedIndex].value;
+            let tel = document.querySelector('input[name="tel"]:checked').value;
+            text.innerHTML=phone+"<br>"+gender+"<br>"+time+"<br>"+tel;
+        }
+        function color(){
+            let hr = document.getElementsByTagName("hr")[0];
+            hr.previousElementSibling.style.backgroundColor = "yellow";
+            hr.nextElementSibling.style.backgroundColor = "lighyblue";
+        }
+    </script>
+</body>
+</html>

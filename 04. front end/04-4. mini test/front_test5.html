@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프론트 시험5</title>
+</head>
+<body>
+    <span class="title">자바스크립트란?</span>
+    <button onclick="boarder()">버튼</button>
+    <button onclick="count()">태그몇개?</button>
+    <span id="tagnum"></span>
+    <hr>
+    <p>자바스크립트는 웹 프로그래밍 언어로서 웹 페이지를 동적 변경시킬 수 있다.</p>
+    <p><span id="vio">프로그래밍 언어</span>를 아는 사용자는 쉽다.</p>
+    <p>GUI프로그래민에 필요한 요소들이 있어 어려움이 있다.</p>
+    <script>
+        function boarder(){
+            document.getElementById("vio").style.border="1px dotted violet";
+        }
+        function count(){
+            let tagCount = document.getElementsByTagName("*").length;
+            console.log(tagCount);
+            document.getElementById("tagnum").innerHTML=tagCount;
+        }
+    </script>
+</body>
+</html>
