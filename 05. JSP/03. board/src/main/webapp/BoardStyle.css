@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Yeon+Sung&display=swap');
+
+body{
+	position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	font-family: "Jua", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: rgb(54, 28, 7);
+	text-align: center;
+}
+table, th, td {
+	border: 1px solid #FFA98F;
+	border-collapse: collapse;
+	padding: 2px;
+	text-align: center;
+}
+th{
+	background-color: #7BA87B;
+}
+input, textarea{
+	border: 1px solid #FFA98F;
+	padding: 3px;
+	border-radius: 3px;
+}
+a{
+	text-decoration: none;
+} 
+.lasttr td{
+	text-align: right;
+	border-bottom: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+.lasttr input, .lasttr button{
+	border: none;
+	background-color: #006400;
+	box-shadow: 1px 1px 1px #8B4513;
+	padding: 5px;
+	margin: 0 3px;
+	border-radius: 3px;
+	color: white;
+	font-family: "Black Han Sans", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	cursor: pointer;
+}
+.lasttr input:hover, .lasttr button:hover {
+	background-color: #ffe7ce;
+	color: #8B4513;
+}
+.title{
+	text-align: left;
+}
