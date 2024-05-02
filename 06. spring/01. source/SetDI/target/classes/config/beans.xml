@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id='test1' class="beans.Test">
+		<property name="d1" value="200"/> <!-- d1값 초기화 -->
+		<property name="d2" value="11.11"/>
+		<property name="d3" value="hi"/>
+		<property name="d4" value="true"/>
+		<property name="d5">
+			<bean class="beans.Data"/> <!-- Data객체가 들어감 -->
+		</property>
+		<property name="d6" ref="data"/> 
+	</bean>
+	<bean id="data" class="beans.Data"/> <!-- class등록 후 ref로 사용 가능 -->
+	
+
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 아이디를 등록하여 가져다 씀으로 간소화 -->
+	<!-- English 등록 시 -->              
+	<!-- <bean id="hi" class="beans.English"/>  객체 등록, jsp:usebean이랑 비슷함 -->
+	<!-- English hi = new English();와 같음 -->
+	
+	<!-- Korea 등록 시 -->
+	<bean id="hi" class="beans.Korea"/>  
+</beans>

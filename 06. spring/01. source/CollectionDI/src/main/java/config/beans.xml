@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="test1" class="beans.Test">	
+		<!-- list interface -->
+		<property name="list1">
+			<list>
+				<value>스프링1</value>
+				<value>스프링2</value>
+				<value>스프링3</value>
+			</list>
+		</property>
+		<property name="list2">
+			<list>
+				<value type="int">10</value><!-- 기본이 String이기 때문에 type 적어줘야 함 -->
+				<value type="int">20</value>
+				<value type="int">30</value>
+			</list>
+		</property>
+		<property name="list3">
+			<list>
+				<bean class="beans.Data"/>
+				<ref bean="data"/>
+			</list>
+		</property>
+		
+		<!-- set interface -->
+		<property name="set1">
+			<set>
+				<value>부트1</value>
+				<value>부트2</value>
+				<value>부트3</value>
+			</set>
+		</property>
+		<property name="set2">
+			<set>
+				<value type="int">1</value>
+				<value type="int">2</value>
+				<value type="int">2</value> <!-- list는 동일한 데이터 삽입 안됨! -->
+			</set>
+		</property>
+		<property name="set3">
+			<set>
+				<bean class="beans.Data"/>
+				<ref bean="data"/>
+				<ref bean="data"/>
+			</set>
+		</property>
+	</bean>
+	<bean id="data" class="beans.Data"/>
+	
+</beans>

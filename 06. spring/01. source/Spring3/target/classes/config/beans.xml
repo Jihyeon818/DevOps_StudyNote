@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	                    
+	<!--  xml로딩할 때, 자동으로 객체가 생성됨. 여기선 등록만 됨 -->
+	<!--  id에 이름설정하면 getBean 메서드를 통해 객체의 주소값을 가져올 수 있다 -->
+	<!--  생성된 객체는 더이상 생성되지 않는다 ★Singleton★ -->
+	<bean class="beans.Test" id='test1'/>
+	
+	<!--  lazy-init은 안적으면 default값 false -->
+	<!--  생성자를 호출하며 함수가 호출되지 않도록 -->
+	<bean class="beans.Test" id='test2' lazy-init="true"/>
+	
+	<!-- scope="prototype" : xml 로딩할 때 객체가 생성되지 않음-->
+	<!--  getBean메서드를 호출할 때마다 객체가 생성됨(싱글톤X) -->
+	<bean class="beans.Test" id='test3' scope="prototype"/>
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="test" class="beans.Test" lazy-init="true"/>
+	<bean id="test2" class="beans.Test" lazy-init="true">
+		<constructor-arg value='10' type="int"/> <!-- type이 int인 생성자에 10대입-->
+	</bean>
+	<bean id="test3" class="beans.Test" lazy-init="true">
+		<constructor-arg value='10.10' type="double"/> <!-- type이 double인 생성자에 대입-->
+	</bean>
+	<bean id="test4" class="beans.Test" lazy-init="true">
+		<constructor-arg value='문자열'/> <!-- type default는 String, String 생성자에 대입-->
+	</bean>
+	<bean id="test5" class="beans.Test" lazy-init="true">
+		<constructor-arg value='10' type="int" index="0"/> <!-- type이 같은 경우 index로 위치 지정 또는 순서대로 적어줘야 함 -->
+		<constructor-arg value='10.10' type="double"/>
+		<constructor-arg value='문자열' type='java.lang.String'/>
+	</bean>
+	
+	<bean id="test6" class="beans.Test2">
+		<constructor-arg> <!-- 매개변수가 class일 때 class로 넣어줘야 함 -->
+			<bean class="beans.Data"/><!-- Data객체의 주소값 들어감 -->
+		</constructor-arg>
+		<constructor-arg>
+			<bean class="beans.Data"/><!-- 같은 주소값 -->	
+		</constructor-arg>
+	</bean>
+	
+	<bean id="data" class="beans.Data" scope="prototype"/>
+	<bean id="test7" class="beans.Test2">
+		<constructor-arg ref='data'/>
+		<constructor-arg ref='data'/>
+	</bean>
+</beans>

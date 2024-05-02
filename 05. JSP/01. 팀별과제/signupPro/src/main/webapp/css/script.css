@@ -1,0 +1,12 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+}
+#loginbox{
+	box-shadow: 3px 3px 3px gray;
+	border-radius: 5px;
+	padding: 20px;
+}

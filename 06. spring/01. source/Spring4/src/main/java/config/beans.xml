@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="default_init" default-destroy-method="default_destroy">
+	<!-- ↑Test2에 있는 함수 등록 -->
+	
+	<!-- 함수로 적은거 그대로 등록 -->
+	<!-- method를 등록하면 자동으로 함수 호출되어짐 -->
+	<bean id="test1" class="beans.Test" lazy-init="true" init-method="Test_init" destroy-method="Test_destroy"/>
+	<bean id="test2" class="beans.Test2" lazy-init="true"/> <!-- 직접 선언한 init 우선순위가 더 높음 -->
+	<bean id="test3" class="beans.Test3" lazy-init="true" init-method="Test3_init" destroy-method="Test3_destroy"/>
+	<bean id="test4" class="beans.Test4" lazy-init="true"/>
+	
+</beans>
