@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	                    http://www.springframework.org/schema/beans/spring-beans.xsd
+	                    http://www.springframework.org/schema/context
+	                    http://www.springframework.org/schema/context/spring-context.xsd">
+	                    
+	<!-- 지정된 패키지 안에 있는 Bean 클래스들의 어노테이션을 분석(체크)한다 -->
+	<context:component-scan base-package="beans2"/>
+	<context:component-scan base-package="beans3"/>
+
+	<bean class="beans.Test"/>
+	<bean class="beans.Test2" id="test2"/>
+	<bean class="beans.Test2" id="test22"/>
+	
+	<bean class="beans2.Test4" id="test4"/>
+
+</beans>
