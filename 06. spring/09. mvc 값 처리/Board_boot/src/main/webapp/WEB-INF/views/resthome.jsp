@@ -21,7 +21,7 @@
 		
 		 function loadBoard(){
 			 $.ajax({
-				 url: "boardList",
+				 url: "board/list",
 				 type: "get",
 				 dataType: "json",
 				 success: make,
@@ -79,10 +79,10 @@
 		
 		function goDelete(idx) {
 			$.ajax({
-				url:"boardDelete",
-				type:"get", 
-				data: {"idx":idx}, //삭제할 글번호를 서버에 전달
-				success: loadBoard, //삭제 후 게시글 목록으로 이동
+				url:"board/"+idx,
+				type:"delete", 
+				data: {"idx":idx},
+				success: loadBoard,
 				error: function() {alert("error");}
 			})
 		}
@@ -91,7 +91,7 @@
 			let formData=$("#frm").serialize(); //폼에 적은거 다 불러오기
 			
 			$.ajax({
-				url:"boardInsert",
+				url:"board/create",
 				type:"post", //post방식으로 /boardInsert로 매핑
 				data: formData, //내가 폼에 입력한 데이터를 서버로 전달
 				success: loadBoard, //서버와의 통신이 성공되면 loadBoard 메서드 호출 → 내가 쓴 게시글을 테이블 형식으로 출력
@@ -104,7 +104,7 @@
 		function goContent(idx) {
 			if($("#con"+idx).css("display")=="none"){   //내용폼이 안보이는 상황이면
 				$.ajax({
-					url : "boardContent",
+					url : "board/"+idx,
 					type : "get",
 					data : {"idx":idx},
 					dataType : "json",
@@ -116,19 +116,19 @@
 					}
 				});
 			
- 				$.ajax({ 
-					url : "boardCount",
-					type : "get",
+				$.ajax({  //제목 클릭함 → 조회수 증가
+					url : "board/count/"+idx,
+					type : "put",
 					data : {"idx":idx},
 					dataType : "json",
 					success : function(data) {
-						$("#cnt"+idx).text(data.count); 
+						$("#cnt"+idx).text(data.count); //조회수 폼에 Board객체에 있는(data) 조회수 출력
 					},
 					error : function() {
 						alert("error");
 					}
 				});
- 
+
 				$("#con"+idx).css("display","table-row");				
 				
 			}else{ 
@@ -157,13 +157,16 @@
 			let updateData = $("#ta"+idx).val();
 			
 			$.ajax({
-				url : "boardUpdate",
-				type : "post",
-				data : {
-					"idx" : idx, 
-					"title" : title,
-					"content" : updateData
-				},
+				url : "board/update",
+				type : "put",
+				//여러개의 값을 json형식으로 컨트롤러에 보낼 때 json.stringify로 변환해서 전달해야 함
+				//그걸 컨트롤러에서 받을 때 @RequestBody를 통해 받음
+					contentType: 'application/json;charset=utf-8',
+				data: JSON.stringify({
+				    "idx" : idx, 
+				    "title" : title,
+				    "content" : updateData
+				}),
 				success : loadBoard,
 				error : function() {
 					alert("error");
@@ -217,7 +220,6 @@
 						</tr>
 					</table>
 				</form>
-				<a href="">RestController 사용 Board로 이동</a>
 			</div>
 			<div class="panel-footer">데브옵스10기 신지현</div>
 		</div>

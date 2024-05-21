@@ -12,7 +12,7 @@
 </insert>
 
 <select id="boardContent" resultType="kr.bit.entity.Board">
-	select * from bitboard idx=#{idx}
+	select * from bitboard where idx=#{idx}
 </select>
 
 <delete id="boardDelete" parameterType="int">

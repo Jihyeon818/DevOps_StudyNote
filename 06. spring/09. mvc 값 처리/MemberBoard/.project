@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Board_boot</name>
+	<name>MemberBoard</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -36,7 +36,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1716281001643</id>
+			<id>1716281001606</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
