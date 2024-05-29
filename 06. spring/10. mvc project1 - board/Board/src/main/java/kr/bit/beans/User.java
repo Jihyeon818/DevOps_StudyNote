@@ -4,6 +4,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class User {
+	
 	private int user_idx;
 	
 	@Size(min=2, max=4)
@@ -22,8 +23,9 @@ public class User {
 	@Pattern(regexp = "[a-zA-Z0-9]*")
 	private String user_pw2;
 	
+	
 	private boolean existId;
-	private boolean userLogin; 	
+	private boolean userLogin;
 	
 	public boolean isUserLogin() {
 		return userLogin;
@@ -34,11 +36,28 @@ public class User {
 	}
 
 	public User() {
-		this.existId=false; //중복검사를 안할걸로 초기화 → '중복검사를 해주세요'라고 띄우기 위해
-		this.userLogin=false;
+		this.existId=false; //중복확인검사 안할걸로 초기화해줌 -> 중복확인검사 해야되니까!
+		this.userLogin=false; //로그인 여부 -> 로그인 안되어있는 걸로 초기화
 	}
-	
 
+	public boolean isExistId() {
+		return existId;
+	}
+	public void setExistId(boolean existId) {
+		this.existId = existId;
+	}
+	public String getUser_pw2() {
+		return user_pw2;
+	}
+	public void setUser_pw2(String user_pw2) {
+		this.user_pw2 = user_pw2;
+	}
+	public int getUser_idx() {
+		return user_idx;
+	}
+	public void setUser_idx(int user_idx) {
+		this.user_idx = user_idx;
+	}
 	public String getUser_name() {
 		return user_name;
 	}
@@ -56,23 +75,5 @@ public class User {
 	}
 	public void setUser_pw(String user_pw) {
 		this.user_pw = user_pw;
-	}
-	public String getUser_pw2() {
-		return user_pw2;
-	}
-	public void setUser_pw2(String user_pw2) {
-		this.user_pw2 = user_pw2;
-	}
-	public boolean isExistId() {
-		return existId;
-	}
-	public void setExistId(boolean existId) {
-		this.existId = existId;
-	}
-	public int getUser_idx() {
-		return user_idx;
-	}
-	public void setUser_idx(int user_idx) {
-		this.user_idx = user_idx;
-	}
+	} 
 }

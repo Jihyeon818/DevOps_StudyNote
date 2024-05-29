@@ -11,18 +11,28 @@ import kr.bit.mapper.BoardMapper;
 
 @Repository
 public class BoardDao {
+	
 	@Autowired
 	private BoardMapper boardMapper;
 	
 	public void addContent(Content writeContentBean) {
 		boardMapper.addContent(writeContentBean);
 	}
-	
+
 	public String getBoardName(int board_info_idx) {
 		return boardMapper.getBoardName(board_info_idx);
 	}
 	
 	public List<Content> getContent(int board_info_idx, RowBounds rowBounds){
+		
 		return boardMapper.getContent(board_info_idx, rowBounds.getOffset(), rowBounds.getLimit());
 	}
 }
+
+
+
+
+
+
+
+

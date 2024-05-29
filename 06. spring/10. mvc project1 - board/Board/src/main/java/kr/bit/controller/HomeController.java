@@ -9,6 +9,6 @@ public class HomeController {
 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String home() {
-		return "redirect:/main"; //main.jsp를 첫화면으로 지정
+		return "redirect:/main";  //main.jsp를 첫화면으로
 	}
 }

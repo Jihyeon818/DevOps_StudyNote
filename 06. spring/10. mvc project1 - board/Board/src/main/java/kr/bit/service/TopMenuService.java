@@ -10,13 +10,14 @@ import kr.bit.dao.TopMenuDao;
 
 @Service
 public class TopMenuService {
-
+	
 	@Autowired
 	private TopMenuDao topMenuDao;
 	
 	public List<BoardInfo> getTopMenuList(){
 		List<BoardInfo> topMenuList = topMenuDao.getTopMenuList();
-		return topMenuList;
+		return topMenuList;  //1,2,1팀,2팀
 	}
 }
-//상단메뉴에 팀명을 띄우고 싶음(상단 메뉴는 어떤 주소를 눌러도 다 동작해야 하기 때문) → 인터셉터를 거쳐 어떤 요청이 있던 간에 topmenu를 통과하여 처리할 수 있도록 구현
+//상단메뉴에 팀명을 띄우고 싶음(상단메뉴는 어떤주소를 눌러도 다 동작해야하기 때문에 - 뭘 요청하던간에 인터셉터를 거쳐야함)
+//뭘 요청하던간에 topmenu통과해야한다

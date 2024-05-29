@@ -6,44 +6,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>회원 가입</title>
-	<!-- Bootstrap CDN -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-	<script>
-		function chexistId() {
-			let user_id = $('#user_id').val();
-			if(user_id.length == 0) {
-				alert('아이디를 입력해주세요.')
-				return;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>우리반 화이팅</title>
+<!-- Bootstrap CDN -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	
+<script>
+function chexistId(){
+	
+	let user_id=$("#user_id").val()  //입력한 아이디 가져옴
+	
+	if(user_id.length==0){
+		alert('아이디 입력해주세요')
+		return
+	}
+	
+	$.ajax({
+		url:'${root}user/chexistId/'+user_id,
+		type:'get',
+		dataType:'text',
+		success:function(result){
+			if(result.trim()=='true'){
+				alert('사용할 수 있는 아이디입니다')
+				$('#existId').val('true')
 			}
-			
-			$.ajax({
-				url:'${root}user/chexistId/' + user_id,
-				type:'get',
-				dataType:'text',
-				success:function(result) {
-					if(result.trim() == 'true') {
-						alert('사용할 수 있는 아이디입니다.')
-						$('#existId').val('true')
-					} else {
-						alert('사용할 수 없는 아이디입니다.')	
-						$('#existId').val('false')
-					}
-				}
-			})			
+			else{
+				alert('사용할 수 없는 아이디입니다')
+				$('#existId').val('false')
+			}
 		}
-		function resetUser() {
-			$('#existId').val('false') //사용할 수 없는 아이디로 설정
-		}
-	</script>
+	})
+	
+	function resetUser(){
+		$('#existId').val('false')
+	}
+	
+	
+}
+</script>
 </head>
 <body>
-	<c:import url="/WEB-INF/views/include/nav.jsp" />
+	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 	<div class="container" style="margin-top: 100px">
 		<div class="row">
 			<div class="col-sm-3"></div>
@@ -51,7 +62,7 @@
 				<div class="card shadow">
 					<div class="card-body">
 						<form:form action="${root}user/join_pro" method="post" modelAttribute="joinBean">
-							<form:hidden path="existId"/>
+							 <form:hidden path="existId"/> 
 							<div class="form-group">
 								<form:label path="user_name">이름</form:label> 
 								<form:input type="text" path="user_name" class="form-control"/>
@@ -92,6 +103,6 @@
 				</div>
 			</div>
 		</div>
-		<c:import url="/WEB-INF/views/include/footer.jsp" />
+		<c:import url="/WEB-INF/views/include/bottom_menu.jsp" />
 </body>
 </html>

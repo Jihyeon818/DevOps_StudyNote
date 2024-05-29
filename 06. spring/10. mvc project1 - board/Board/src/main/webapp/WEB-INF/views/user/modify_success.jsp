@@ -5,6 +5,6 @@
 <c:set var="root" value="${pageContext.request.contextPath }/" />
 
 <script>
-	alert('회원 정보 수정이 완료되었습니다')
-	location.href="${root}main"
+	alert('수정되었습니다')
+	location.href="${root}user/modify"
 </script>

@@ -10,14 +10,14 @@ import kr.bit.service.UserService;
 //restAPI는 보통 주소로 보냄
 @RestController
 public class RestTestController {
-
+	
 	@Autowired
 	private UserService userService;
 	
 	@GetMapping("/user/chexistId/{user_id}")
 	public String existId(@PathVariable String user_id) {
-		boolean chk = userService.existId(user_id);
+		
+		boolean chk=userService.existId(user_id);
 		return chk+"";
 	}
-	
 }

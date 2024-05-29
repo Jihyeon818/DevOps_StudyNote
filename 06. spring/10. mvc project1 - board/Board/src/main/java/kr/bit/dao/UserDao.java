@@ -8,6 +8,7 @@ import kr.bit.mapper.UserMapper;
 
 @Repository
 public class UserDao {
+	
 	@Autowired
 	private UserMapper userMapper;
 	
@@ -15,12 +16,12 @@ public class UserDao {
 		return userMapper.existId(user_id);
 	}
 	
-	public void addUser(User joinBean){
+	public void addUser(User joinBean) {
 		userMapper.addUser(joinBean);
 	}
 	
 	public User getLoginUser(User loginProBean) {
-		return userMapper.loginUser(loginProBean);
+		return userMapper.getLoginUser(loginProBean);
 	}
 	
 	public User getModifyUser(int user_idx) {
@@ -30,5 +31,4 @@ public class UserDao {
 	public void modifyUser(User modifyBean) {
 		userMapper.modifyUser(modifyBean);
 	}
-	
 }

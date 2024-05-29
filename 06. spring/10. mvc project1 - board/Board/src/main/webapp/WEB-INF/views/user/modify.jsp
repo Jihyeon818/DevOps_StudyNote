@@ -6,16 +6,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>회원정보 수정</title>
-	<!-- Bootstrap CDN -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>우리반 화이팅</title>
+<!-- Bootstrap CDN -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<c:import url="/WEB-INF/views/include/nav.jsp" />
+	<c:import url="/WEB-INF/views/include/top_menu.jsp" />
 	<div class="container" style="margin-top: 100px">
 		<div class="row">
 			<div class="col-sm-3"></div>
@@ -27,15 +32,20 @@
 								<form:label path="user_name">이름</form:label> 
 								<form:input type="text" path="user_name" class="form-control" readonly="true"/>
 							</div>
+
 							<div class="form-group">
 								<form:label path="user_id">아이디</form:label>
-								<form:input class="form-control" path="user_id" readonly="true"/>
+								<form:input class="form-control" path="user_id" readonly="true"/>		
 							</div>
+								
+							
 							<div class="form-group">
 								<form:label path="user_pw">비밀번호</form:label> 
 								<form:password path="user_pw" class="form-control"/>
 								<form:errors path="user_pw" style='color:red'/>
 							</div>
+
+
 							<div class="form-group">
 								<form:label path="user_pw2">비밀번호 확인</form:label> 
 								<form:password path="user_pw2" class="form-control"/>
@@ -53,6 +63,9 @@
 				</div>
 			</div>
 		</div>
-		<c:import url="/WEB-INF/views/include/footer.jsp" />
+		<c:import url="/WEB-INF/views/include/bottom_menu.jsp" />
 </body>
 </html>
+
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kr.bit.mapper.StudentMapper">
+
+	<select id="getAllStudents" resultType="kr.bit.entity.Student">
+		select * from student order by num desc
+	</select>
+	
+	<select id="search" resultType="kr.bit.entity.Student">
+		select * from student where name like concat('%', #{name} ,'%') order by num desc
+	</select>
+	
+	<select id="studentFind" resultType="kr.bit.entity.Student">
+		select * from student where num=#{num}
+	</select>
+	
+	<insert id="studentInsert" parameterType="kr.bit.entity.Student">
+		insert into
+		student(name,adr,university,major)
+		values(#{name},#{adr},#{university},#{major})
+	</insert>
+	
+	<update id="studentUpdate" parameterType="kr.bit.entity.Student">
+		update student
+		set adr = #{adr}, university = #{university}, major = #{major}
+		where name = #{name} and num = #{num}
+	</update>
+	
+	<delete id="studentDelete" parameterType="int">
+        delete from student where num=#{num}
+    </delete>
+
+</mapper>
+

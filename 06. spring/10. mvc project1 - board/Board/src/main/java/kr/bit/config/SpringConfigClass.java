@@ -5,14 +5,16 @@ import javax.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServletInitializer{	//web.xml
+public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServletInitializer {
+	
+	//DispatcherServlet 에 매핑할 요청주소를 세팅
 	@Override
 	protected String[] getServletMappings() {
-		// 모든경로 맵핑
+		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
 	
-
+	//MVC 설정을 위한 클래스 지정
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		// TODO Auto-generated method stub
@@ -20,6 +22,7 @@ public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServlet
 	}
 	
 	
+	//웹에서 사용할 Bean들을 정의하기 위한 클래스 지정
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
@@ -34,4 +37,6 @@ public class SpringConfigClass extends AbstractAnnotationConfigDispatcherServlet
 		encodingFilter.setEncoding("UTF-8");
 		return new Filter[] {encodingFilter};
 	}
+	
+
 }

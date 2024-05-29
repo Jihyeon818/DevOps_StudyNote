@@ -28,21 +28,26 @@ public class BoardService {
 	private BoardDao boardDao;
 	
 	@Resource(name="loginBean")
-	private User loginBean; //로그인 된 유저의 정보
+	private User loginBean;
 	
-	public void addContent(Content writeContentBean) { //제목, 내용 저장
-		writeContentBean.setContent_writer_idx(loginBean.getUser_idx()); //로그인한 사람의 idx값 가져와 글작성자 idx값에 세팅
+	public void addContent(Content writeContentBean) {  //제목 내용 저장하는
+		                                                                 //로그인한 사람의 idx값 가져와
+		writeContentBean.setContent_writer_idx(loginBean.getUser_idx()); //글작성자 idx값에 세팅
 		boardDao.addContent(writeContentBean);
 	}
 	
-	public String getBoardName(int board_info_idx) { //팀이름 추출
+	public String getBoardName(int board_info_idx) {  //팀이름 추출
 		return boardDao.getBoardName(board_info_idx);
 	}
+
 	public List<Content> getContent(int board_info_idx, int page){
-		int start=(page-1)*page_listcount;
-		RowBounds rowBounds = new RowBounds(start, page_listcount);
-		return boardDao.getContent(board_info_idx, rowBounds);
 		
-		//return boardDao.getContent(board_info_idx, offset, pageSize);
+		int start=(page-1)*page_listcount;
+		
+		RowBounds rowBounds = new RowBounds(start, page_listcount);
+		
+		return boardDao.getContent(board_info_idx, rowBounds);
 	}
 }
+
+
