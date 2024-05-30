@@ -36,6 +36,8 @@
                     		+")'>수정</button><button class='btn btn-danger btn-sm' style='margin:2px;' onclick='goDelete("
 		                    +num
 		                    +")'>삭제</button>");
+			
+			$("#studentNum").focus();
 		}
 		
 		function update(num) {
@@ -121,9 +123,7 @@
 		function studentSearch(data) {
 			$("#view").empty();
 			let li = "";
-	    	console.log(data)
 		    if (data != null && data != "") {
-		    	console.log("if문 통과함~~")
 		    	$.each(data, function (index, obj) {
 		    		li += "<tr class='align-middle white-space-nowrap hover-actions-trigger btn-reveal-trigger hover-bg-100'>";
 		    		li += "<td class='align-middle text-center'>" + obj.num + "</td>";

@@ -26,7 +26,6 @@ public class StudentController {
     @ResponseBody
     @GetMapping("/{num}")
     public Student studentFind(@PathVariable("num") int num) {
-    	System.out.println(num);
     	Student vo = studentMapper.studentFind(num);
 		return vo;
 	}
@@ -45,15 +44,13 @@ public class StudentController {
     
     @ResponseBody
     @GetMapping("/serch/{name}")
-    public List<Student> search(@PathVariable("name") String name) {
-    	System.out.println(name);
+    public List<Student> search(@PathVariable("name") String name) {;
     	return studentMapper.search(name);
 	}
     
     @ResponseBody
     @PostMapping("/insert")
 	public void studentInsert(Student student){
-    	System.out.println(student);
     	studentMapper.studentInsert(student);
 	}
 }

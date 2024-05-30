@@ -9,14 +9,32 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function openDetails(){
+            $("#detailContainer").css("display","block");
+
+            $("#con").css("display","none");
+            $("#openButton").css("display","none");
+            $("#closeButton").css("display","block");
+        }
+
+        function closeDetails(){
+            $("#detailContainer").css("display","none");
+
+            $("#con").css("display","block");
+            $("#openButton").css("display","block");
+            $("#closeButton").css("display","none");
+        }
+    </script>
 </head>
 <body style="background-color: #edf2f9; padding: 10px;">
     <div class="container">
-        <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-3" id="con" style="display: block;"></div>
             <div class="col-lg-6" style="background-color: #fff; border-radius: 5%; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2); margin: 5px;">
                 <div class="card" style="padding: 30px;">
                     <div class="bg-body-tertiary card-header">
-                        <div class="row align-items-center g-2"> 
+                        <div class="row g-2"> 
                             <div class="col">
                                 <h3 class="mb-0" style="display: inline-block; margin: 0;">학생 정보 시스템</h3>
                                 <form class="position-relative" style="display: inline-block; float: right;">
@@ -50,10 +68,16 @@
                                             <a href="#" id="name">신지현</a>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <button type="button" class="btn btn-info">
-                                                <svg style="position: relative; top: 3px;"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                            <button type="button" id="openButton" class="btn btn-info" onclick="openDetails()" style="display: block;">
+                                                <svg style="position: relative; top: 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                                                     <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"></path>
                                                 </svg>
+                                                MORE
+                                            </button>
+                                            <button type="button" id="closeButton" class="btn btn-secondary" onclick="closeDetails()" style="display: none;">
+                                                <svg style="position: relative; top: 3px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                                                  </svg>
                                                 MORE
                                             </button>
                                         </td>
@@ -65,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-5" style="background-color: #fff; border-radius: 5%; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2); margin: 5px;">
+            <div class="col-lg-5" id="detailContainer" style="display:none; background-color: #fff; border-radius: 5%; box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2); margin: 5px;">
                 <div class="card" style="padding: 30px;">
                     <div class="bg-body-tertiary card-header">
                         <div class="row align-items-center g-2"> 
@@ -118,7 +142,7 @@
                             </table>
                         </div>         
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>
