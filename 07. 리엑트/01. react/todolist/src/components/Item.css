@@ -1,0 +1,39 @@
+.TodoItem {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap:20px;
+    margin-top: 2px;
+}
+
+.TodoItem input[type=checked] {
+    width:  15px;
+    border: 1px solid deepskyblue;
+}
+
+.TodoItem data{
+    color: gray;
+}
+
+.TodoItem .content{
+    flex:1;
+}
+
+.TodoItem button{
+    color: deepskyblue;
+    background-color: whitesmoke;
+    border-radius:  5px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+.TodoItem button:focus{
+    color: whitesmoke;
+    background-color: deepskyblue;
+    outline: 1px solid deepskyblue;
+}
+.TodoItem button:hover{
+    color: whitesmoke;
+    background-color: deepskyblue;
+    outline: 1px solid deepskyblue;
+}
