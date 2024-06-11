@@ -31,6 +31,7 @@ function App() {
 
   const idState=useRef(3);
 
+  //체크박스
   const onUpdate = (targetId) =>{
     //todos state값들 중에 targetId와 일치하는 id를 갖는 item의 idDo를 변경
     setTodos(
@@ -40,6 +41,11 @@ function App() {
         //같지 않으면 기존 todo를 돌려받음
       )
     )
+  }
+
+  const onDelete = (targetId) =>{
+    setTodos(todos.filter((todo)=>todo.id != targetId))
+    //todos배열에서 targetID와 일치하는 id를 갖는 요소만 삭제한 배열
   }
 
   const onCreate =(content)=>{
@@ -57,7 +63,7 @@ function App() {
       <div className='App'>
         <Header/>
         <Register onCreate={onCreate} />
-        <List todos={todos} onUpdate={onUpdate}/>
+        <List todos={todos} onUpdate={onUpdate} onDelete={onDelete}/>
       </div>
     </>
   )

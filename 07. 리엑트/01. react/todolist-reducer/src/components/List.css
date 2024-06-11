@@ -1,0 +1,23 @@
+.List{
+    display: flex;
+    flex-direction: column;
+}
+
+.List input{
+    padding: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.List input:focus{
+    outline: 1px solid deepskyblue;
+}
+
+.List h4{
+    text-align: center;
+}
+
+.List .li{
+    display: flex;
+    flex-direction: column;
+}
