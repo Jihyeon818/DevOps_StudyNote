@@ -1,4 +1,17 @@
-import { useEffect, useState } from "react";
+import { useReducer, useEffect, useState } from "react";
+
+function reducer(state, action){
+    //action.type에 따라 다른 작업 수행
+    switch(action.type){
+        case 'increment':
+            return {value:state.value+1};
+        case 'decrement':
+            return {value:state.value-1};
+        default:
+            return state;
+    }
+}
+
 
 const Test =() =>{
     //useState로 값 저장
@@ -30,15 +43,27 @@ const Test =() =>{
         }
     }
 
+    const [state, dispatch] = useReducer(reducer, {value:0})
+    //state 초기값 0 → reducer 함수 호출
+
     return(
         <div>
             <input type="text" name="username" value={username} onChange={onChangeUsername}/>
             <input type="text" name="mag" value={msg} onChange={onChangeMsg}/>
-            <button onClick={onClickbutton} onkeyPress={onkeyPressButton}>확인</button>
+            <button onClick={onClickbutton} onKeyPress={onkeyPressButton}>확인</button>
             <br/>
             이름: {username}<br/>
             하고싶은 말: {msg}
-
+            <br/>
+            현재 값 {StaticRange.value}이다
+            <p>
+                <button onClick={()=>{
+                    dispatch({type: 'increment'})
+                }}>+1</button>
+                <button onClick={()=>{
+                    dispatch({type: 'decrement'})
+                }}>-1</button>
+            </p>
         </div>
     )
 }

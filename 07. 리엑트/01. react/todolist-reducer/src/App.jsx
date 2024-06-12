@@ -1,4 +1,4 @@
-import { useReducer, useRef } from 'react'
+import { createContext, useCallback, useReducer, useRef } from 'react'
 import './App.css'
 import Header from './components/Header'
 import List from './components/List'
@@ -43,6 +43,9 @@ function reducer(state, action) {
   }
 }
 
+//외부에서 선언 → 리렌더링 될때마다 다시 생성될 필요가 없기 때문에 외부에 선언
+const TodoListContext = createContext();
+
 function App() {
   const [todos, dispatch] = useReducer(reducer, copyData);
   const idState = useRef(3);
@@ -55,14 +58,14 @@ function App() {
     });
   };
 
-  const onDelete = (targetId) => {
+  const onDelete = useCallback((targetId) => {
     dispatch({
       type: 'delete',
       targetId: targetId,
     });
-  };
+  },[]);
 
-  const onCreate = (content) => {
+  const onCreate = useCallback((content) => {
     dispatch({
       type: 'create',
       data: {
@@ -72,14 +75,17 @@ function App() {
         date: new Date().getTime(),
       },
     });
-  };
+  },[]);
 
   return (
     <>
       <div className='App'>
         <Header />
-        <Register onCreate={onCreate} />
-        <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+        {/*데이터를 다이렉트로 공급받아 사용할 수 있음 */}
+        <TodoListContext.Provider value={{todos,onCreate,onUpdate,onDelete}}>
+          {/* <Register onCreate={onCreate} /> */}
+          <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
+        </TodoListContext.Provider>
       </div>
     </>
   );
