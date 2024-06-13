@@ -1,3 +1,44 @@
+async function getProfile(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve({
+                name:"홍길동",
+                id : "gil",
+            })
+        }, 2000);
+    })
+}
+
+//then메서드 안써도 됨 → 메서드 호출될 때까지 기다렸다가 결과값 저장
+//await → async안에서만 사용 가능한 키워드
+
+async function printProfile(){
+    const data = await getProfile();
+    console.log(data);
+}
+printProfile();
+
+
+
+/*
+콜백함수
+console.log('h1');
+setTimeout(() => {
+   console.log('h12'); 
+}, 2000);
+console.log('h13');
+
+function add(a,b,callback){
+    setTimeout(() => {
+        const sum=a+b;
+        //console.log(sum)
+        callback(sum);
+    }, 3000);
+}
+add(12,3,(value)=>{console.log(value)});
+*/
+
+/*
 // 1.map
 let number=[1,2,3,4,5];
 
@@ -36,7 +77,7 @@ console.log(m2); // hi react spring
 
 
 
-/*let arr=[1,2,3];
+let arr=[1,2,3];
 
 //1. 배열 구조 분해 할당
 let [one, two, three] = arr;
