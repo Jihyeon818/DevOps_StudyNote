@@ -25,7 +25,7 @@ function App(){
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/new" element={<New/>} />
-            <Route path="/meet/:id" element={<Meet/>} />
+            <Route path="/meet/:id" element={<Meet/>} /> {/* 아이디값이 전달되지 않으면 notfound 페이지로 이동 */}
             <Route path="*" element={<NotFound/>} />
         </Routes>
         </>
