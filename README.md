@@ -3,7 +3,9 @@
 ## 기간: 2024.02.20 ~ 2024.08.26
 ## 🔨 사용 스킬
 <table>
-  <caption style="position:absolute;top:-999px;left:-999px;">분류별 사용스킬 표</caption>
+  <caption style="position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0, 0, 0, 0); border:0;">
+    분류별 사용스킬 표
+  </caption>
   <thead>
     <tr>
       <th>분류</th>
@@ -28,7 +30,7 @@
         백엔드
       </td>
       <td>
-        <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=OpenJDK&logoColor=white"/>
+        <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">
         <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
         <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
         <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white">
@@ -72,8 +74,7 @@
 ## 프로젝트
 ### 중간 프로젝트
 - 깃허브 : <a href="https://github.com/Naver-spring/All-s_project">
-              <img src="https://github.com/user-attachments/assets/68f00e45-f959-45d0-9592-27dfa9bf3a8b" width="15">
-              All's
+              <img src="https://github.com/user-attachments/assets/68f00e45-f959-45d0-9592-27dfa9bf3a8b" width="20" alt="All's">
           </a>
 - 수행기간 및 인원 : 2024. 05-6. ~ 2024. 07. | 6명
 - 프로젝트명 : 스프링 MVC, JSP를 활용한 스터디 그룹 및 개인 공부 시간, 일정 관리 웹사이트
@@ -89,8 +90,7 @@
 
 ### 파이널 프로젝트
 - 깃허브 : <a href="https://github.com/Naver-spring/bobple">
-              <img src="https://github.com/user-attachments/assets/21432f08-26ec-4eda-902d-5ba5a97bf1df" width="15">
-              BOBPLE
+              <img src="https://github.com/user-attachments/assets/3249560b-2de6-4c3b-b9e3-06dbc1c5773b" width="20" alt="BOBPLE">
            </a>
 - 수행기간 및 인원 : 2024. 07. ~ 2024. 08. | 7명
 - 프로젝트명 : 스프링 부트와 리액트를 활용한 직장인 식사 추천 모바일 웹 사이트
