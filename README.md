@@ -3,7 +3,7 @@
 ## 기간: 2024.02.20 ~ 2024.08.26
 ## 🔨 사용 스킬
 <table>
-  <caption style="position:absolute;top:-999;left:-999;">분류별 사용스킬 표</caption>
+  <caption style="position:absolute;top:-999px;left:-999px;">분류별 사용스킬 표</caption>
   <thead>
     <tr>
       <th>분류</th>
@@ -71,7 +71,10 @@
 
 ## 프로젝트
 ### 중간 프로젝트
-- 깃허브 : <a href="https://github.com/Naver-spring/All-s_project">All's</a>
+- 깃허브 : <a href="https://github.com/Naver-spring/All-s_project">
+              <img src="https://github.com/user-attachments/assets/68f00e45-f959-45d0-9592-27dfa9bf3a8b" width="15">
+              All's
+          </a>
 - 수행기간 및 인원 : 2024. 05-6. ~ 2024. 07. | 6명
 - 프로젝트명 : 스프링 MVC, JSP를 활용한 스터디 그룹 및 개인 공부 시간, 일정 관리 웹사이트
 - 프로젝트 개요 : 개인의 공부 기록 및 시간 측정, 스터디 일정 관리와 더불어 회원 간의 스터디 그룹 생성, 공부 자료 및 그룹 일정 공유, 서로의 공부 현황 공유까지 가능한 종합적인 스터디 플랫폼
@@ -85,7 +88,10 @@
 · 협업: 노션, 구글 스프레드 시트를 이용한 기획 및 트러블 슈팅, 회의록 작성, github를 이용한 협업
 
 ### 파이널 프로젝트
-- 깃허브 : <a href="https://github.com/Naver-spring/bobple">![bobple_mascot_icon](https://github.com/user-attachments/assets/21432f08-26ec-4eda-902d-5ba5a97bf1df)BOBPLE</a>
+- 깃허브 : <a href="https://github.com/Naver-spring/bobple">
+              <img src="https://github.com/user-attachments/assets/21432f08-26ec-4eda-902d-5ba5a97bf1df" width="15">
+              BOBPLE
+           </a>
 - 수행기간 및 인원 : 2024. 07. ~ 2024. 08. | 7명
 - 프로젝트명 : 스프링 부트와 리액트를 활용한 직장인 식사 추천 모바일 웹 사이트
 - 프로젝트 개요 : 직장인들의 점심, 회식 등을 위한 위치 기반 음식점 추천, 도시락 레시피 공유, 기프티콘 및 포인트 게임, 식사비용 정산 게임 제공
