@@ -3,9 +3,6 @@
 ## 기간: 2024.02.20 ~ 2024.08.26
 ## 🔨 사용 스킬
 <table>
-  <caption style="position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0, 0, 0, 0); border:0;">
-    분류별 사용스킬 표
-  </caption>
   <thead>
     <tr>
       <th>분류</th>
@@ -80,16 +77,36 @@
 - 프로젝트명 : 스프링 MVC, JSP를 활용한 스터디 그룹 및 개인 공부 시간, 일정 관리 웹사이트
 - 프로젝트 개요 : 개인의 공부 기록 및 시간 측정, 스터디 일정 관리와 더불어 회원 간의 스터디 그룹 생성, 공부 자료 및 그룹 일정 공유, 서로의 공부 현황 공유까지 가능한 종합적인 스터디 플랫폼
 - 사용 기술
-· 프론트엔드: <img src="https://img.shields.io/badge/Jsp-e76f00?style=for-the-badge&logo=Jsp&logoColor=white">, 
-              <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">, 
-              <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">, 
-              <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
-              <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">, 
-· 백엔드: <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">,
-          <img src="https://img.shields.io/badge/Spring MVC-6DB33F?style=for-the-badge&logo=spring&logoColor=white">,
-          <img src="https://img.shields.io/badge/myBatis-E06F2E?style=for-the-badge">,
+  <table>
+    <thead>
+      <tr>
+        <th>분류</th>
+        <th>스킬</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>프론트엔드</td>
+        <td>
+          <img src="https://img.shields.io/badge/Jsp-e76f00?style=for-the-badge&logo=Jsp&logoColor=white">
+          <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+          <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+          <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
+          <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
+        </td>
+      </tr>
+      <tr>
+        <td>백엔드</td>
+        <td>
+          <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">
+          <img src="https://img.shields.io/badge/Spring MVC-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
+          <img src="https://img.shields.io/badge/myBatis-E06F2E?style=for-the-badge">
           <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
 ### 파이널 프로젝트
 - 깃허브 : <a href="https://github.com/Naver-spring/bobple">
               <img src="https://github.com/user-attachments/assets/3249560b-2de6-4c3b-b9e3-06dbc1c5773b" width="70" alt="BOBPLE">
@@ -98,10 +115,30 @@
 - 프로젝트명 : 스프링 부트와 리액트를 활용한 직장인 식사 추천 모바일 웹 사이트
 - 프로젝트 개요 : 직장인들의 점심, 회식 등을 위한 위치 기반 음식점 추천, 도시락 레시피 공유, 기프티콘 및 포인트 게임, 식사비용 정산 게임 제공
 - 사용 기술
-· 프론트엔드: <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">,
-              <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">, 
-              <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-· 백엔드: <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">,
-        <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">,
-        <img src="https://img.shields.io/badge/JPA-B9B184?style=for-the-badge">,
+  <table>
+  <thead>
+    <tr>
+      <th>분류</th>
+      <th>스킬</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>프론트엔드</td>
+      <td>
+        <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+        <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+        <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+      </td>
+    </tr>
+    <tr>
+      <td>백엔드</td>
+      <td>
+        <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white">
+        <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+        <img src="https://img.shields.io/badge/JPA-B9B184?style=for-the-badge">
         <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+      </td>
+    </tr>
+  </tbody>
+</table>
